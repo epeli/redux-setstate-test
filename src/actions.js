@@ -24,9 +24,13 @@ function receiveGetUsers (payload) {
 export function fetchUsers () {
 	return (dispatch) => {
 
-		dispatch ( getUsers() );
-		
-		dispatch ( receiveGetUsers ({success: true, data: []})); 
+		setTimeout(() => {
+
+			dispatch ( getUsers() );
+
+			dispatch ( receiveGetUsers ({success: true, data: []})); 
+
+		}, 1);
 		
 
 	}
